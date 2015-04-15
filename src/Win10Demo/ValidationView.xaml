@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="Win10Demo.ValidationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<StackPanel>
+			<TextBlock Text="Please, fill the form" />
+			<TextBox x:Name="NameTextBox"  Header="First name" />
+			<TextBox x:Name="EmailTextBox"  Header="Email" />
+			<TextBox x:Name="AgeTextBox"  Header="Age" />
+			<Button x:Name="ValidateButton" Content="Validate" />
+		</StackPanel>
+    </Grid>
+</Page>

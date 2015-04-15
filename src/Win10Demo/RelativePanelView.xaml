@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Win10Demo.RelativePanelView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<!--<StackPanel>
+				<Button Content="" />
+			</StackPanel>-->
+			<RelativePanel Grid.Row="1">
+				<TextBlock Text="Windows 10 is awesome" x:Name="BaselineText"
+						   RelativePanel.AlignHorizontalCenterWithPanel="True"
+						   RelativePanel.AlignVerticalCenterWithPanel="True"/>
+				<Button Content="Hello" x:Name="BlueButton"
+						RelativePanel.Below="BaselineText"
+						RelativePanel.AlignLeftWith="BaselineText"
+						Width="100" Height="100" Background="Blue"/>
+				<Button Content="French" x:Name="WhiteButton"
+						RelativePanel.RightOf="BlueButton"
+						RelativePanel.AlignVerticalCenterWith="BlueButton"
+						Width="100" Height="100" Background="White"/>
+				<Button Content="Developers" x:Name="RedButton"
+						RelativePanel.RightOf="WhiteButton"
+						RelativePanel.AlignVerticalCenterWith="WhiteButton"
+						Width="100" Height="100" Background="Red"/>
+			</RelativePanel>
+		</Grid>
+	</Grid>
+</Page>

@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="Win10Demo.SplitViewView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<SplitView x:Name="Split" OpenPaneLength="240" CompactPaneLength="48"
+				   DisplayMode="CompactInline" PanePlacement="Left"
+				   PaneBackground="DarkViolet">
+			<SplitView.Pane>
+				<StackPanel>
+					<RadioButton Content="Menu" Style="{StaticResource MenuRadioButtonStyle}" Click="MenuButton_Click"/>
+					<RadioButton Content="Home" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<TextBlock Text="Activities" />
+					<RadioButton Content="Activity history" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<RadioButton Content="Find a workout" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<TextBlock Text="Configuration" />
+					<RadioButton Content="My profile" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<RadioButton Content="Connected Apps" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<RadioButton Content="Preferences" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<TextBlock Text="" />
+					<RadioButton Content="About" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+					<RadioButton Content="Help" Style="{StaticResource MenuRadioButtonStyle}" GroupName="Menu" Click="RadioButton_Click"/>
+				</StackPanel>
+			</SplitView.Pane>
+			<Grid>
+				<TextBlock x:Name="SelectedMenuText" Text="Please, select a menu entry"/>
+			</Grid>
+		</SplitView>
+    </Grid>
+</Page>

@@ -6,22 +6,32 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<StackPanel>
-			<Button Content="Title bar" x:Name="TitleBarButton" Click="TitleBarButton_Click" />
-			<Button Content="Launcher" x:Name="LauncherButton" Click="LauncherButton_Click" />
-			<Button Content="Key accelerator" x:Name="KeyAcceleratorButton" Click="KeyAcceleratorButton_Click" />
-			<Button Content="Media source" x:Name="MediaSourceButton" Click="MediaSourceButton_Click" />
-			<Button Content="Drag and drop" x:Name="DrapDropButton" Click="DrapDropButton_Click" />
-			<Button Content="Battery" x:Name="BatteryButton" Click="BatteryButton_Click" />
-			<Button Content="Memory" x:Name="MemoryButton" Click="MemoryButton_Click" />
-			<Button Content="Speech" x:Name="SpeechButton" Click="SpeechButton_Click" />
-			<Button Content="Ink" x:Name="InkButton" Click="InkButton_Click" />
-			<Button Content="Pivot" x:Name="PivotButton" Click="PivotButton_Click" />
-			<Button Content="MapControl" x:Name="MapControlButton" Click="MapControlButton_Click" />
-			<Button Content="SplitView" x:Name="SplitViewButton" Click="SplitViewButton_Click" />
-			<Button Content="RelativePanel" x:Name="RelativePanelButton" Click="RelativePanelButton_Click" />
-			<Button Content="Test" x:Name="TestButton" Click="TestButton_Click" />
-		</StackPanel>
-    </Grid>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<SplitView x:Name="MenuSplitView" Background="Black" 
+        OpenPaneLength="240" CompactPaneLength="60" 
+        DisplayMode="CompactOverlay" IsPaneOpen="False" 
+        PaneBackground="#343434" 
+        Content="{Binding}">
+			<SplitView.Pane>
+				<StackPanel>
+					<RadioButton x:Name="MenuButton" Style="{StaticResource MenuRadioButtonStyle}" Content="Menu" Tag="" Click="MenuButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Home" x:Name="HomeButton" Click="HomeButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Title bar" x:Name="TitleBarButton" Click="TitleBarButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Launcher" x:Name="LauncherButton" Click="LauncherButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Key accelerator" x:Name="KeyAcceleratorButton" Click="KeyAcceleratorButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Media source" x:Name="MediaSourceButton" Click="MediaSourceButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Drag and drop" x:Name="DrapDropButton" Click="DrapDropButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="System informations" x:Name="SysInfoButton" Click="SysInfoButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Speech" x:Name="SpeechButton" Click="SpeechButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Ink" x:Name="InkButton" Click="InkButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Pivot" x:Name="PivotButton" Click="PivotButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="CalendarView" x:Name="CalendarViewButton" Click="CalendarViewButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="MapControl" x:Name="MapControlButton" Click="MapControlButton_Click" />
+					<!--<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="SplitView" x:Name="SplitViewButton" Click="SplitViewButton_Click" />-->
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="RelativePanel" x:Name="RelativePanelButton" Click="RelativePanelButton_Click" />
+					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Test" x:Name="TestButton" Click="TestButton_Click" />
+				</StackPanel>
+			</SplitView.Pane>
+		</SplitView>
+	</Grid>
 </Page>

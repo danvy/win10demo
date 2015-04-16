@@ -24,69 +24,79 @@ namespace Win10Demo
         {
             this.InitializeComponent();
         }
-		private void KeyCtrlT_Pressed(KeyAccelerator sender, object args)
+		private void MenuButton_Click(object sender, RoutedEventArgs e)
 		{
-			//var dialog = new MessageDialog("You pressed CTRL+T");
-			//await dialog.ShowAsync();
+			MenuSplitView.IsPaneOpen = !MenuSplitView.IsPaneOpen;
 		}
+		private void Navigate(Type view)
+		{
+			var frame = this.DataContext as Frame;
+			Page page = frame?.Content as Page;
+			if (page?.GetType() != view)
+			{
+				frame.Navigate(view);
+			}
+			MenuSplitView.IsPaneOpen = false;
+        }
 		private void MediaSourceButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(MediaSourceView));
+			Navigate(typeof(MediaSourceView));
 		}
 		private void TitleBarButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(TitleBarView));
+			Navigate(typeof(TitleBarView));
 		}
 		private void KeyAcceleratorButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(KeyAcceleratorView));
+			Navigate(typeof(KeyAcceleratorView));
 		}
 		private void DrapDropButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(DragDropView));
-		}
-		private void BatteryButton_Click(object sender, RoutedEventArgs e)
-		{
-			Frame.Navigate(typeof(BatteryView));
+			Navigate(typeof(DragDropView));
 		}
 		private void TestButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(TestView));
-		}
-		private void MemoryButton_Click(object sender, RoutedEventArgs e)
-		{
-			Frame.Navigate(typeof(MemoryView));
+			Navigate(typeof(TestView));
 		}
 		private void LauncherButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(LauncherView));
+			Navigate(typeof(LauncherView));
 		}
-
 		private void RelativePanelButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(RelativePanelView));
+			Navigate(typeof(RelativePanelView));
 		}
 		private void PivotButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(PivotView));
+			Navigate(typeof(PivotView));
 		}
 		private void InkButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(InkView));
+			Navigate(typeof(InkView));
 		}
 		private void SplitViewButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(SplitViewView));
+			Navigate(typeof(SplitViewView));
 		}
-
 		private void MapControlButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(MapsView));
+			Navigate(typeof(MapsView));
 		}
-
 		private void SpeechButton_Click(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(SpeechView));
+			Navigate(typeof(SpeechView));
+		}
+		private void CalendarViewButton_Click(object sender, RoutedEventArgs e)
+		{
+			Navigate(typeof(CalendarViewView));
+		}
+		private void HomeButton_Click(object sender, RoutedEventArgs e)
+		{
+			Navigate(typeof(HomeView));
+		}
+		private void SysInfoButton_Click(object sender, RoutedEventArgs e)
+		{
+			Navigate(typeof(SysInfoView));
 		}
 	}
 }

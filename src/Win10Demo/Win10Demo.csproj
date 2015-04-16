@@ -114,11 +114,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BatteryView.xaml.cs">
-      <DependentUpon>BatteryView.xaml</DependentUpon>
+    <Compile Include="CalendarViewView.xaml.cs">
+      <DependentUpon>CalendarViewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DragDropView.xaml.cs">
       <DependentUpon>DragDropView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="InkView.xaml.cs">
       <DependentUpon>InkView.xaml</DependentUpon>
@@ -138,9 +141,6 @@
     <Compile Include="MediaSourceView.xaml.cs">
       <DependentUpon>MediaSourceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MemoryView.xaml.cs">
-      <DependentUpon>MemoryView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PivotView.xaml.cs">
       <DependentUpon>PivotView.xaml</DependentUpon>
     </Compile>
@@ -153,6 +153,9 @@
     </Compile>
     <Compile Include="SplitViewView.xaml.cs">
       <DependentUpon>SplitViewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SysInfoView.xaml.cs">
+      <DependentUpon>SysInfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
@@ -183,11 +186,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BatteryView.xaml">
+    <Page Include="CalendarViewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DragDropView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,10 +222,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MemoryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PivotView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +235,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SplitViewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SysInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

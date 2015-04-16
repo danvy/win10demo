@@ -8,31 +8,26 @@
     mc:Ignorable="d">
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="auto" />
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
-			<!--<StackPanel>
-				<Button Content="" />
-			</StackPanel>-->
-			<RelativePanel Grid.Row="1">
-				<TextBlock Text="Windows 10 is awesome" x:Name="BaselineText"
+		<Pivot>
+			<PivotItem Header="Side by side">
+				<RelativePanel Grid.Row="1">
+					<TextBlock Text="Windows 10 is awesome" x:Name="BaselineText"
 						   RelativePanel.AlignHorizontalCenterWithPanel="True"
 						   RelativePanel.AlignVerticalCenterWithPanel="True"/>
-				<Button Content="Hello" x:Name="BlueButton"
+					<Button Content="Hello" x:Name="BlueButton"
 						RelativePanel.Below="BaselineText"
 						RelativePanel.AlignLeftWith="BaselineText"
 						Width="100" Height="100" Background="Blue"/>
-				<Button Content="French" x:Name="WhiteButton"
+					<Button Content="French" x:Name="WhiteButton"
 						RelativePanel.RightOf="BlueButton"
 						RelativePanel.AlignVerticalCenterWith="BlueButton"
-						Width="100" Height="100" Background="White"/>
-				<Button Content="Developers" x:Name="RedButton"
+						Width="100" Height="150" Background="White" BorderBrush="Gray" BorderThickness="1"/>
+					<Button Content="Developers" x:Name="RedButton"
 						RelativePanel.RightOf="WhiteButton"
 						RelativePanel.AlignVerticalCenterWith="WhiteButton"
-						Width="100" Height="100" Background="Red"/>
-			</RelativePanel>
-		</Grid>
+						Width="100" Height="200" Background="Red"/>
+				</RelativePanel>
+			</PivotItem>
+		</Pivot>
 	</Grid>
 </Page>

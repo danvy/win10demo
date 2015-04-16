@@ -8,14 +8,14 @@
 
 	<Identity
 	  Name="bfaefacc-013a-4a1c-9036-1ccdaba70ca7"
-	  Publisher="CN=Alex"
+	  Publisher="CN=Alex Danvy"
 	  Version="1.0.0.0" />
 
 	<mp:PhoneIdentity PhoneProductId="bfaefacc-013a-4a1c-9036-1ccdaba70ca7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
 	<Properties>
-		<DisplayName>Win10Demo</DisplayName>
-		<PublisherDisplayName>Alex</PublisherDisplayName>
+		<DisplayName>Windows 10 SDK Demo</DisplayName>
+		<PublisherDisplayName>Alex Danvy</PublisherDisplayName>
 		<Logo>Assets\StoreLogo.png</Logo>
 	</Properties>
 
@@ -37,7 +37,7 @@
 			  Square44x44Logo="Assets\SmallLogo.png"
 			  Description="Win10Demo"
 			  ForegroundText="light"
-			  BackgroundColor="#464646">
+			  BackgroundColor="#00B2F0">
 				<uap:SplashScreen Image="Assets\SplashScreen.png" />
 			</uap:VisualElements>
 		</Application>
@@ -46,5 +46,6 @@
 	<Capabilities>
 		<Capability Name="internetClient" />
 		<uap:Capability Name="picturesLibrary" />
+		<DeviceCapability Name="location"/>
 	</Capabilities>
 </Package>

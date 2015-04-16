@@ -57,8 +57,7 @@ namespace Win10Demo
 				var locator = new Geolocator();
 				locator.DesiredAccuracy = PositionAccuracy.Default;
 				var pos = await locator.GetGeopositionAsync();
-				var point = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
-				await Map.TrySetViewAsync(point, 10);
+				await Map.TrySetViewAsync(pos.Coordinate.Point, 10);
 			}
 		}
 

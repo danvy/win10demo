@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+		<StackPanel>
+			<TextBox x:Name="MessageBox" Text="Hello world!"/>
+			<Button Content="Read" Click="Button_Click" />
+		</StackPanel>
+	</Grid>
 </Page>

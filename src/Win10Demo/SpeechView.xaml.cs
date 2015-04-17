@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.SpeechSynthesis;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,9 +24,35 @@ namespace Win10Demo
 	/// </summary>
 	public sealed partial class SpeechView : Page
 	{
+		private MediaElement mediaElement;
+		private SpeechSynthesizer speech;
+
 		public SpeechView()
 		{
 			this.InitializeComponent();
+		}
+		private async void Button_Click(object sender, RoutedEventArgs e)
+		{
+			if (speech == null)
+			{
+				speech = new SpeechSynthesizer();
+				var language = CultureInfo.CurrentCulture.ToString();
+				var voices = SpeechSynthesizer.AllVoices.Where(v => v.Language == language).OrderByDescending(v => v.Gender);
+				speech.Voice = voices.FirstOrDefault(v => v.Gender == VoiceGender.Female);
+			}
+			if (mediaElement == null)
+			{
+				mediaElement = new MediaElement();
+			}
+            var message = MessageBox.Text;
+            if (!string.IsNullOrEmpty(message))
+			{
+				var result = await speech.SynthesizeTextToStreamAsync(message);
+				if (mediaElement.CurrentState != MediaElementState.Stopped)
+					mediaElement.Stop();
+				mediaElement.SetSource(result, result.ContentType);
+				mediaElement.Play();
+			}
 		}
 	}
 }

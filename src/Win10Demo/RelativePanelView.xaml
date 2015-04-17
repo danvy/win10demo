@@ -11,6 +11,9 @@
 		<Pivot>
 			<PivotItem Header="Side by side">
 				<RelativePanel Grid.Row="1">
+					<Button x:Name="AlignTop" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Click="AlignTop_Click"/>
+					<Button x:Name="AlignBottom" RelativePanel.AlignTopWith="AlignTop" RelativePanel.RightOf="AlignTop" Click="AlignBottom_Click"/>
+					<!--<Button x:Name="AlignBottom" RelativePanel.AlignTopWith="AlignTop" RelativePanel.RightOf="AlignTop" />-->
 					<TextBlock Text="Windows 10 is awesome" x:Name="BaselineText"
 						   RelativePanel.AlignHorizontalCenterWithPanel="True"
 						   RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -21,11 +24,11 @@
 					<Button Content="French" x:Name="WhiteButton"
 						RelativePanel.RightOf="BlueButton"
 						RelativePanel.AlignVerticalCenterWith="BlueButton"
-						Width="100" Height="150" Background="White" BorderBrush="Gray" BorderThickness="1"/>
+						Width="150" Height="150" Background="White" BorderBrush="Gray" BorderThickness="1"/>
 					<Button Content="Developers" x:Name="RedButton"
 						RelativePanel.RightOf="WhiteButton"
 						RelativePanel.AlignVerticalCenterWith="WhiteButton"
-						Width="100" Height="200" Background="Red"/>
+						Width="200" Height="200" Background="Red"/>
 				</RelativePanel>
 			</PivotItem>
 		</Pivot>

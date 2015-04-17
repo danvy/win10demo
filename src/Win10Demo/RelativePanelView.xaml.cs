@@ -26,5 +26,17 @@ namespace Win10Demo
 		{
 			this.InitializeComponent();
 		}
+
+		private void AlignTop_Click(object sender, RoutedEventArgs e)
+		{
+			RelativePanel.SetAlignTopWith(WhiteButton, "BlueButton");
+			RelativePanel.SetAlignTopWith(RedButton, "BlueButton");
+		}
+
+		private void AlignBottom_Click(object sender, RoutedEventArgs e)
+		{
+			RelativePanel.SetAlignBottomWith(WhiteButton, "BlueButton");
+			RelativePanel.SetAlignBottomWith(RedButton, "BlueButton");
+		}
 	}
 }

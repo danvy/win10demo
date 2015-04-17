@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -32,6 +33,7 @@ namespace Win10Demo
 
 		private void TestView_Loaded(object sender, RoutedEventArgs e)
 		{
-		}
+			Debug.WriteLine(Windows.ApplicationModel.Package.Current.Id.FamilyName);
+        }
 	}
 }

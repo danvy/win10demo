@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -39,16 +40,29 @@ namespace Win10Demo
 		{
 			await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));
 		}
-        private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)
+		private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)
 		{
-			//TODO LaunchUriForResult
-			var options = new LauncherOptions
+			var protocol = "win10demo2://";
+            var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
+            //var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
+			//if (status == QueryUriSupportStatus.Success)
 			{
-				TargetApplicationPackageFamilyName = "Desired.App_fahbwp72s5828"
-			};
-			var result = await Launcher.LaunchUriForResultsAsync(new Uri("custom://auth?username=test"), options);
-			if (result.Status == LaunchUriStatus.Success)
-			{
+				var options = new LauncherOptions
+				{
+					TargetApplicationPackageFamilyName = packageFamilyName
+				};
+				var values = new ValueSet();
+				values.Add("TwitterId", "danvy");
+				var result = await Launcher.LaunchUriForResultsAsync(new Uri(protocol), options, values);
+				if (result.Status == LaunchUriStatus.Success)
+				{
+					var authorized = result.Result["Authorized"] as string;
+					if (authorized == true.ToString())
+					{
+						var dialog = new MessageDialog("You are authorized :)");
+						await dialog.ShowAsync();
+					}
+				}
 			}
 		}
 	}

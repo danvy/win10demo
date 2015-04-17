@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+	<Identity
+	  Name="0df93276-6bbb-46fa-96b7-ec223e226505"
+	  Publisher="CN=Alex"
+	  Version="1.0.0.0" />
+
+	<mp:PhoneIdentity PhoneProductId="0df93276-6bbb-46fa-96b7-ec223e226505" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+	<Properties>
+		<DisplayName>Win10Demo2</DisplayName>
+		<PublisherDisplayName>Alex</PublisherDisplayName>
+		<Logo>Assets\StoreLogo.png</Logo>
+	</Properties>
+
+	<Dependencies>
+		<TargetPlatform Name="Windows.Universal" MinVersion="10.0.10030.0" MaxVersionTested="10.0.10030.0" />
+	</Dependencies>
+
+	<Resources>
+		<Resource Language="x-generate"/>
+	</Resources>
+
+	<Applications>
+		<Application Id="App"
+		  Executable="$targetnametoken$.exe"
+		  EntryPoint="Win10Demo2.App">
+			<uap:VisualElements
+			  DisplayName="Win10Demo2"
+			  Square150x150Logo="Assets\Logo.png"
+			  Square44x44Logo="Assets\SmallLogo.png"
+			  Description="Win10Demo2"
+			  ForegroundText="light"
+			  BackgroundColor="#464646">
+				<uap:SplashScreen Image="Assets\SplashScreen.png" />
+			</uap:VisualElements>
+			<Extensions>
+				<uap:Extension Category="windows.protocol">
+					<uap:Protocol Name="win10demo2" ReturnResults="optional">
+						<uap:Logo>Assets\StoreLogo.scale-100.png</uap:Logo>
+						<uap:DisplayName>Windows 10 SDK Demo 2</uap:DisplayName>
+					</uap:Protocol>
+				</uap:Extension>
+			</Extensions>
+		</Application>
+	</Applications>
+
+	<Capabilities>
+		<Capability Name="internetClient" />
+	</Capabilities>
+</Package>

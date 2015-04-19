@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.AppService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -25,6 +27,8 @@ namespace Win10Demo
 	/// </summary>
 	public sealed partial class LauncherView : Page
 	{
+		private AppServiceConnection connection;
+
 		public LauncherView()
 		{
 			this.InitializeComponent();
@@ -62,6 +66,36 @@ namespace Win10Demo
 						var dialog = new MessageDialog("You are authorized :)");
 						await dialog.ShowAsync();
 					}
+				}
+			}
+		}
+
+		private async void CallService_Click(object sender, RoutedEventArgs e)
+		{
+			if (connection == null)
+			{
+				connection = new AppServiceConnection();
+				connection.AppServiceName = "CalculationService";
+				connection.PackageFamilyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
+				var status = await connection.OpenAsync();
+				if (status != AppServiceConnectionStatus.Success)
+				{
+					var dialog = new MessageDialog("Sorry, I can't connect to the service right now :S");
+					await dialog.ShowAsync();
+					return;
+				}
+			}
+			var message = new ValueSet();
+			message.Add("service", OperatorCombo.Items[OperatorCombo.SelectedIndex]);
+			message.Add("a", Convert.ToInt32(ValueABox.Text));
+			message.Add("b", Convert.ToInt32(ValueBBox.Text));
+			AppServiceResponse response = await connection.SendMessageAsync(message);
+			Debug.WriteLine(response.Status);
+			if (response.Status == AppServiceResponseStatus.Success)
+			{
+				if (response.Message.ContainsKey("result"))
+				{
+					ResultBlock.Text = response.Message["result"] as string;
 				}
 			}
 		}

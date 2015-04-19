@@ -12,6 +12,17 @@
 			<Button Content="Launch pictures folder" Click="LaunchFolder_Click" />
 			<Button Content="Launch Wifi settings" Click="LaunchSettings_Click" />
 			<Button Content="Launch URI for Result" Click="LaunchUriForResult_Click" />
+			<StackPanel Orientation="Horizontal">
+				<TextBox x:Name="ValueABox" InputScope="Number" Text="1" />
+				<ComboBox x:Name="OperatorCombo" SelectedIndex="0">
+					<ComboBoxItem Content="Add" />
+					<ComboBoxItem Content="Sub" />
+				</ComboBox>
+				<TextBox x:Name="ValueBBox" InputScope="Number" Text="2" />
+				<TextBlock Text="=" />
+				<TextBlock x:Name="ResultBlock" Text="?" />
+			</StackPanel>
+			<Button Content="Call service" Click="CallService_Click" />
 		</StackPanel>
 	</Grid>
 </Page>

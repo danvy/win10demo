@@ -49,7 +49,6 @@ namespace Win10Demo2
             }
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
-
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -58,14 +57,11 @@ namespace Win10Demo2
                 rootFrame = new Frame();
                 // Set the default language
                 rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
-
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
-
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
@@ -80,7 +76,6 @@ namespace Win10Demo2
             // Ensure the current window is active
             Window.Current.Activate();
         }
-
         /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>
@@ -90,7 +85,6 @@ namespace Win10Demo2
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
-
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
         /// without knowing whether the application will be terminated or resumed with the contents
@@ -108,7 +102,6 @@ namespace Win10Demo2
 		{
 			base.OnActivated(args);
 			Frame rootFrame = Window.Current.Content as Frame;
-
 			if (rootFrame == null)
 			{
 				rootFrame = new Frame();
@@ -120,19 +113,13 @@ namespace Win10Demo2
 				var pfrArgs = (ProtocolForResultsActivatedEventArgs)args;
 				if (pfrArgs.CallerPackageFamilyName.Equals("bfaefacc-013a-4a1c-9036-1ccdaba70ca7_k78v8hwpzrpgy"))
 				{
-					var twitterId = pfrArgs.Data["TwitterId"] as string;
 					rootFrame.Navigate(typeof(MainPage), pfrArgs);
-					//var values = new ValueSet();
-					//values.Add("TimeStamp", DateTime.Now.ToString());
-					//values.Add("Authorized", (twitterId == "danvy").ToString());
-					//pfrArgs.ProtocolForResultsOperation.ReportCompleted(values);
 				}
 			}
 			else
 			{
 				rootFrame.Navigate(typeof(MainPage));
 			}
-			// Ensure the current window is active
 			Window.Current.Activate();
 		}
 	}

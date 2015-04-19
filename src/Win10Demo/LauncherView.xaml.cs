@@ -27,8 +27,6 @@ namespace Win10Demo
 	/// </summary>
 	public sealed partial class LauncherView : Page
 	{
-		private AppServiceConnection connection;
-
 		public LauncherView()
 		{
 			this.InitializeComponent();
@@ -47,8 +45,8 @@ namespace Win10Demo
 		private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)
 		{
 			var protocol = "win10demo2://";
-            var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
-            //var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
+			var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
+			//var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
 			//if (status == QueryUriSupportStatus.Success)
 			{
 				var options = new LauncherOptions
@@ -69,34 +67,34 @@ namespace Win10Demo
 				}
 			}
 		}
-
 		private async void CallService_Click(object sender, RoutedEventArgs e)
 		{
-			if (connection == null)
+			var connection = new AppServiceConnection();
+			connection.AppServiceName = "CalculationService";
+			connection.PackageFamilyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
+			var status = await connection.OpenAsync();
+			if (status != AppServiceConnectionStatus.Success)
 			{
-				connection = new AppServiceConnection();
-				connection.AppServiceName = "CalculationService";
-				connection.PackageFamilyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
-				var status = await connection.OpenAsync();
-				if (status != AppServiceConnectionStatus.Success)
-				{
-					var dialog = new MessageDialog("Sorry, I can't connect to the service right now :S");
-					await dialog.ShowAsync();
-					return;
-				}
+				var dialog = new MessageDialog("Sorry, I can't connect to the service right now :S");
+				await dialog.ShowAsync();
+				return;
 			}
 			var message = new ValueSet();
 			message.Add("service", OperatorCombo.Items[OperatorCombo.SelectedIndex]);
 			message.Add("a", Convert.ToInt32(ValueABox.Text));
 			message.Add("b", Convert.ToInt32(ValueBBox.Text));
 			AppServiceResponse response = await connection.SendMessageAsync(message);
-			Debug.WriteLine(response.Status);
 			if (response.Status == AppServiceResponseStatus.Success)
 			{
 				if (response.Message.ContainsKey("result"))
 				{
 					ResultBlock.Text = response.Message["result"] as string;
 				}
+			}
+			else
+			{
+				var dialog = new MessageDialog(string.Format("Opps, I just get an error :S ({0})", response.Status));
+				await dialog.ShowAsync();
 			}
 		}
 	}

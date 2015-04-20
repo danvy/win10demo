@@ -47,9 +47,14 @@
 						<uap:DisplayName>Windows 10 SDK Demo 2</uap:DisplayName>
 					</uap:Protocol>
 				</uap:Extension>
-				<uap:Extension Category="windows.appService" EntryPoint="Win10DemoService.CalculationService">
-					<uap:AppService Name="CalculationService"/>
+				<uap:Extension Category="windows.appService" EntryPoint="Win10DemoService.CalculatorService">
+					<uap:AppService Name="CalculatorService"/>
 				</uap:Extension>
+				<Extension Category="windows.publisherCacheFolder">
+					<PublisherCacheFolder>
+						<Folder Name="SharedFolder" />
+					</PublisherCacheFolder>
+				</Extension>
 			</Extensions>
 		</Application>
 	</Applications>

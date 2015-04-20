@@ -30,6 +30,7 @@ namespace Win10Demo
 		public LauncherView()
 		{
 			this.InitializeComponent();
+			//Windows.Storage.ApplicationData.Current.GetPublisherCacheFolder("SharedFolder");
 		}
 
 		private async void LaunchFolder_Click(object sender, RoutedEventArgs e)
@@ -70,8 +71,8 @@ namespace Win10Demo
 		private async void CallService_Click(object sender, RoutedEventArgs e)
 		{
 			var connection = new AppServiceConnection();
-			connection.AppServiceName = "CalculationService";
-			connection.PackageFamilyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
+			connection.PackageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06"; // Windows.ApplicationModel.Package.Current.Id.FamilyName;
+			connection.AppServiceName = "CalculatorService";
 			var status = await connection.OpenAsync();
 			if (status != AppServiceConnectionStatus.Success)
 			{

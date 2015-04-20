@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.SpeechRecognition;
 using Windows.Media.SpeechSynthesis;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -31,7 +32,7 @@ namespace Win10Demo
 		{
 			this.InitializeComponent();
 		}
-		private async void Button_Click(object sender, RoutedEventArgs e)
+		private async void ReadButton_Click(object sender, RoutedEventArgs e)
 		{
 			if (speech == null)
 			{
@@ -44,8 +45,8 @@ namespace Win10Demo
 			{
 				mediaElement = new MediaElement();
 			}
-            var message = MessageBox.Text;
-            if (!string.IsNullOrEmpty(message))
+			var message = MessageBox.Text;
+			if (!string.IsNullOrEmpty(message))
 			{
 				var result = await speech.SynthesizeTextToStreamAsync(message);
 				if (mediaElement.CurrentState != MediaElementState.Stopped)
@@ -53,6 +54,15 @@ namespace Win10Demo
 				mediaElement.SetSource(result, result.ContentType);
 				mediaElement.Play();
 			}
+		}
+
+		private void ListenButton_Click(object sender, RoutedEventArgs e)
+		{
+			//var recognizer = new SpeechRecognizer();
+			//recognizer.Constraints.Add(
+			//recognizer.
+			//var result = await recognizer.RecognizeAsync();
+			//result.
 		}
 	}
 }

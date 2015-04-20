@@ -12,6 +12,8 @@
 			<Button Content="Launch pictures folder" Click="LaunchFolder_Click" />
 			<Button Content="Launch Wifi settings" Click="LaunchSettings_Click" />
 			<Button Content="Launch URI for Result" Click="LaunchUriForResult_Click" />
+			<TextBox x:Name="SharedFileBox" Text="Would you please share this content?" />
+			<Button Content="Write shared file" Click="WriteSharedsFileButton_Click" />
 			<StackPanel Orientation="Horizontal">
 				<TextBox x:Name="ValueABox" InputScope="Number" Text="1" />
 				<ComboBox x:Name="OperatorCombo" SelectedIndex="0">

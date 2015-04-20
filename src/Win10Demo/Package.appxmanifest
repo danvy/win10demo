@@ -42,7 +42,13 @@
 			</uap:VisualElements>
 		</Application>
 	</Applications>
-
+	<Extensions>
+		<Extension Category="windows.publisherCacheFolders">
+			<PublisherCacheFolders>
+				<Folder Name="SharedFolder" />
+			</PublisherCacheFolders>
+		</Extension>
+	</Extensions>
 	<Capabilities>
 		<Capability Name="internetClient" />
 		<uap:Capability Name="picturesLibrary" />

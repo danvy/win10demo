@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.AppService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -30,7 +31,6 @@ namespace Win10Demo
 		public LauncherView()
 		{
 			this.InitializeComponent();
-			//Windows.Storage.ApplicationData.Current.GetPublisherCacheFolder("SharedFolder");
 		}
 
 		private async void LaunchFolder_Click(object sender, RoutedEventArgs e)
@@ -97,6 +97,23 @@ namespace Win10Demo
 				var dialog = new MessageDialog(string.Format("Opps, I just get an error :S ({0})", response.Status));
 				await dialog.ShowAsync();
 			}
+		}
+        private async Task WriteFileAsync(string filename, string content)
+		{
+			var folder = ApplicationData.Current.GetPublisherCacheFolder("SharedFolder");
+			var file = await folder.CreateFileAsync(filename, Windows.Storage.CreationCollisionOption.ReplaceExisting);
+			var fs = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+			var outStream = fs.GetOutputStreamAt(0);
+			var dataWriter = new Windows.Storage.Streams.DataWriter(outStream);
+			dataWriter.WriteString(content);
+			await dataWriter.StoreAsync();
+			dataWriter.DetachStream();
+			await outStream.FlushAsync();
+		}
+
+		private async void WriteSharedsFileButton_Click(object sender, RoutedEventArgs e)
+		{
+			await WriteFileAsync("SharedFile.txt", SharedFileBox.Text);
 		}
 	}
 }

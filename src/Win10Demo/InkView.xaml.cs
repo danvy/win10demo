@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Input.Inking;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -33,7 +34,8 @@ namespace Win10Demo
 			inkStream = new MemoryStream();
 			inkManager = new InkManager();
 			Ink.InkPresenter.IsInputEnabled = true;
-		}
+			Ink.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen | CoreInputDeviceTypes.Touch;
+        }
 
 		private async void SaveButton_Click(object sender, RoutedEventArgs e)
 		{

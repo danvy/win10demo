@@ -23,7 +23,23 @@ namespace Win10Demo
         public MainPage()
         {
             this.InitializeComponent();
-        }
+			var backIsPresent = Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
+            if (backIsPresent)
+			{
+				Windows.Phone.UI.Input.HardwareButtons.BackPressed += (s, e) => { GoBack(); };
+			}
+			BackButton.Visibility = backIsPresent ? Visibility.Collapsed : Visibility.Visible;
+		}
+		private void BackButton_Click(object sender, RoutedEventArgs e)
+		{
+			GoBack();
+		}
+		private void GoBack()
+		{
+			var frame = DataContext as Frame;
+			if (frame?.CanGoBack == true)
+				frame.GoBack();
+		}
 		private void MenuButton_Click(object sender, RoutedEventArgs e)
 		{
 			MenuSplitView.IsPaneOpen = !MenuSplitView.IsPaneOpen;

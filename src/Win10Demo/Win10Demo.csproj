@@ -109,6 +109,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="Windows Mobile, Version=10.0.0.1">
+      <Name>Windows Mobile Extension SDK</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">

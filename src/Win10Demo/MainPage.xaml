@@ -14,6 +14,7 @@
         Content="{Binding}">
 			<SplitView.Pane>
 				<StackPanel>
+					<RadioButton x:Name="BackButton" Background="Green" Tag="" Click="BackButton_Click" Style="{StaticResource MenuRadioButtonStyle}" Content="Back"/>
 					<RadioButton x:Name="MenuButton" Style="{StaticResource MenuRadioButtonStyle}" Content="Menu" Tag="" Click="MenuButton_Click" />
 					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Home" x:Name="HomeButton" Click="HomeButton_Click" />
 					<RadioButton GroupName="Menu" Style="{StaticResource MenuRadioButtonStyle}" Content="Title bar" x:Name="TitleBarButton" Click="TitleBarButton_Click" />

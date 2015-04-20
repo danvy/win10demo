@@ -7,10 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Pivot>
+			<PivotItem Header="Synthesizer" >
+				<StackPanel>
+					<TextBox x:Name="MessageBox" Text="Hello world!"/>
+					<Button Content="Read it" Click="ReadButton_Click" />
+				</StackPanel>
+			</PivotItem>
+			<PivotItem Header="Recognition" >
 		<StackPanel>
-			<TextBox x:Name="MessageBox" Text="Hello world!"/>
-			<Button Content="Read" Click="Button_Click" />
+			<Button Content="Listen to me" Click="ListenButton_Click" />
+			<TextBlock x:Name="RecognizedBlock" Text=""/>
 		</StackPanel>
+			</PivotItem>
+		</Pivot>
 	</Grid>
 </Page>

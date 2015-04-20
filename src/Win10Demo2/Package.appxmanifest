@@ -8,7 +8,7 @@
 
 	<Identity
 	  Name="0df93276-6bbb-46fa-96b7-ec223e226505"
-	  Publisher="CN=Alex"
+	  Publisher="CN=Alex Danvy"
 	  Version="1.0.0.0" />
 
 	<mp:PhoneIdentity PhoneProductId="0df93276-6bbb-46fa-96b7-ec223e226505" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
@@ -50,15 +50,16 @@
 				<uap:Extension Category="windows.appService" EntryPoint="Win10DemoService.CalculatorService">
 					<uap:AppService Name="CalculatorService"/>
 				</uap:Extension>
-				<Extension Category="windows.publisherCacheFolder">
-					<PublisherCacheFolder>
-						<Folder Name="SharedFolder" />
-					</PublisherCacheFolder>
-				</Extension>
 			</Extensions>
 		</Application>
 	</Applications>
-
+	<Extensions>
+		<Extension Category="windows.publisherCacheFolders">
+			<PublisherCacheFolders>
+				<Folder Name="SharedFolder" />
+			</PublisherCacheFolders>
+		</Extension>
+	</Extensions>
 	<Capabilities>
 		<Capability Name="internetClient" />
 	</Capabilities>

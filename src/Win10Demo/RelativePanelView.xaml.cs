@@ -29,16 +29,14 @@ namespace Win10Demo
 
 		private void AlignTop_Click(object sender, RoutedEventArgs e)
 		{
-			RelativePanel.SetAlignTopWith(WhiteButton, "BlueButton");
-			RelativePanel.SetAlignTopWith(RedButton, "BlueButton");
+			RelativePanel.SetAlignTopWith(WhiteRect, "BlueRect");
+			RelativePanel.SetAlignTopWith(RedRect, "BlueRect");
 			//RelativePanel.SetAlignLeftWith(Panel, RedButton);
         }
-
 		private void AlignBottom_Click(object sender, RoutedEventArgs e)
 		{
 			//RelativePanel.SetAlignBottomWith(WhiteButton, "BlueButton");
 			//RelativePanel.SetAlignBottomWith(RedButton, "BlueButton");
-			RelativePanel.SetAlignBottomWithPanel(FreeButton, true);
 		}
 	}
 }

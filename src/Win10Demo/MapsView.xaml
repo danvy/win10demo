@@ -17,7 +17,17 @@
 			<StackPanel Orientation="Horizontal">
 				<Button x:Name="LocationAccessButton" Content="Location access" Click="LocationAccessButton_Click" />
 				<Button x:Name="FindMeButton" Content="Find Me" Click="FindMeButton_Click" />
+				<ToggleButton x:Name="TrafficFlowToggle" Content="Traffic flow" Click="TrafficFlowToggle_Click"/>
 				<Slider x:Name="ZoomSlider" Header="Zoom" Width="100" IntermediateValue="2" LargeChange="5" Maximum="20" Minimum="1" SmallChange="1" TickFrequency="5" ValueChanged="ZoomSlider_ValueChanged"/>
+				<ComboBox Header="Style" Name="StyleCombo" SelectionChanged="StyleCombo_SelectionChanged" Margin="10">
+					<ComboBoxItem>None</ComboBoxItem>
+					<ComboBoxItem>Road</ComboBoxItem>
+					<ComboBoxItem>Aerial</ComboBoxItem>
+					<ComboBoxItem>AerialWithRoads</ComboBoxItem>
+					<ComboBoxItem>Terrain</ComboBoxItem>
+				</ComboBox>
+				<Button x:Name="AddIconButton" Content="Add icon" Click="AddIconButton_Click" />
+				<Button x:Name="AddPolygonButton" Content="Add polygon" Click="AddPolygonButton_Click" />
 			</StackPanel>
 			<maps:MapControl x:Name="Map" Grid.Row="1"/>
 		</Grid>

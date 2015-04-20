@@ -9,27 +9,52 @@
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		<Pivot>
-			<PivotItem Header="Side by side">
+			<PivotItem Header="[X]Of">
 				<RelativePanel x:Name="Panel" Grid.Row="1">
-					<Button x:Name="AlignTop" Content="Align top" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Click="AlignTop_Click"/>
-					<Button x:Name="AlignBottom" Content="Align bottom" RelativePanel.AlignTopWith="AlignTop" RelativePanel.RightOf="AlignTop" Click="AlignBottom_Click"/>
-					<!--<Button x:Name="AlignBottom" RelativePanel.AlignTopWith="AlignTop" RelativePanel.RightOf="AlignTop" />-->
-					<TextBlock Text="Windows 10 is awesome" x:Name="BaselineText"
-						   RelativePanel.AlignHorizontalCenterWithPanel="True"
-						   RelativePanel.AlignVerticalCenterWithPanel="True"/>
-					<Button Content="Hello" x:Name="BlueButton"
-						RelativePanel.Below="BaselineText"
-						RelativePanel.AlignLeftWith="BaselineText"
-						Width="100" Height="100" Background="Blue"/>
-					<Button Content="French" x:Name="WhiteButton"
-						RelativePanel.RightOf="BlueButton"
-						RelativePanel.AlignVerticalCenterWith="BlueButton"
-						Width="150" Height="150" Background="White" BorderBrush="Gray" BorderThickness="1"/>
-					<Button Content="Developers" x:Name="RedButton"
-						RelativePanel.RightOf="WhiteButton"
-						RelativePanel.AlignVerticalCenterWith="WhiteButton"
-						Width="200" Height="200" Background="Red"/>
-					<Button Content="Free" x:Name="FreeButton" />
+					<Rectangle x:Name="BlueRect"
+						RelativePanel.LeftOf="WhiteRect"
+						RelativePanel.AlignVerticalCenterWithPanel="True"
+						Width="200" Height="200" Fill="Blue" />
+					<Rectangle x:Name="WhiteRect"
+						RelativePanel.AlignHorizontalCenterWithPanel="True"
+						RelativePanel.AlignVerticalCenterWithPanel="True"
+						Width="150" Height="150" Fill="White" Stroke="Gray" StrokeThickness="1" />
+					<Rectangle x:Name="RedRect"
+						RelativePanel.AlignVerticalCenterWithPanel="True"
+						RelativePanel.RightOf="WhiteRect"
+						Width="100" Height="100" Fill="Red" />
+				</RelativePanel>
+			</PivotItem>
+			<PivotItem Header="Align[X]">
+				<RelativePanel x:Name="Panel2" Grid.Row="1">
+					<Rectangle x:Name="BlueRect2"
+						RelativePanel.AlignTopWith="WhiteRect2"
+						RelativePanel.AlignRightWith="WhiteRect2"
+						Width="200" Height="200" Fill="Blue" />
+					<Rectangle x:Name="WhiteRect2"
+						RelativePanel.AlignHorizontalCenterWithPanel="True"
+						RelativePanel.AlignVerticalCenterWithPanel="True"
+						Width="150" Height="150" Fill="White" Stroke="Gray" StrokeThickness="1" />
+					<Rectangle x:Name="RedRect2"
+						RelativePanel.AlignBottomWith="WhiteRect2"
+						RelativePanel.AlignLeftWith="WhiteRect2"
+						Width="100" Height="100" Fill="Red" />
+				</RelativePanel>
+			</PivotItem>
+			<PivotItem Header="Align[X]WithPanel">
+				<RelativePanel x:Name="Panel3" Grid.Row="1">
+					<Rectangle x:Name="BlueRect3"
+						RelativePanel.AlignTopWithPanel="true"
+						RelativePanel.AlignLeftWithPanel="True"
+						Width="200" Height="200" Fill="Blue" />
+					<Rectangle x:Name="WhiteRect3"
+						RelativePanel.AlignHorizontalCenterWithPanel="True"
+						RelativePanel.AlignVerticalCenterWithPanel="True"
+						Width="150" Height="150" Fill="White" Stroke="Gray" StrokeThickness="1" />
+					<Rectangle x:Name="RedRect3"
+						RelativePanel.AlignBottomWithPanel="True"
+						RelativePanel.AlignRightWithPanel="True"
+						Width="100" Height="100" Fill="Red" />
 				</RelativePanel>
 			</PivotItem>
 		</Pivot>

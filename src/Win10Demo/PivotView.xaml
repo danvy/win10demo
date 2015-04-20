@@ -7,17 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		<Pivot Title="Title">
+			<Pivot.HeaderTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding}" FontSize="36" Foreground="Red"/>
+				</DataTemplate>
+			</Pivot.HeaderTemplate>
 			<PivotItem Header="First">
 				<TextBlock Text="Wow" />
 			</PivotItem>
 			<PivotItem Header="Second">
 				<TextBlock Text="Fantastic" />
 			</PivotItem>
-			<PivotItem Header="Third">
+			<PivotItem Header="Third" Foreground="Blue">
 				<TextBlock Text="Awesome" />
 			</PivotItem>
 		</Pivot>
-    </Grid>
+	</Grid>
 </Page>

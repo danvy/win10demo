@@ -114,5 +114,10 @@ namespace Win10Demo
 		{
 			Navigate(typeof(SysInfoView));
 		}
+
+		private void AdaptiveTriggersButton_Click(object sender, RoutedEventArgs e)
+		{
+			Navigate(typeof(AdaptiveTriggersView));
+		}
 	}
 }

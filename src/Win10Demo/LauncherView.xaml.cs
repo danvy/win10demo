@@ -41,6 +41,7 @@ namespace Win10Demo
 		}
 		private async void LaunchSettings_Click(object sender, RoutedEventArgs e)
 		{
+			//More options available https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn741261.aspx
 			await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));
 		}
 		private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)

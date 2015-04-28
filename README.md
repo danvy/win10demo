@@ -4,6 +4,7 @@
 I couldn't wait for the release of all the official demos of the Windows 10 SDK. Of course there are some of them already available https://github.com/Microsoft/Windows-universal-samples but some are missing. The purpose of this project is very simple :
 - give everyone the opportunity to play with the APIs right now
 - share my enthusiasm for the new platform
+So this project is more a playground than a reference. Use it as sandbox to quickly test an API, to edit the code, evaluate some options or parameters.
 
 ##What's in ?
 100% of the source code is available. It's full C# & XAML.
@@ -13,6 +14,23 @@ You will find a Visual Studio solution (Win10Demo.sln) including 3 projects
 - The AppService project (Win10DemoService.csproj)
 Each feature is illustrated in a single file. Ex : 
 There no external dependency or third party library.
+Here are the APIs/features used :
+- SplitView (Menu with hamburger)
+- CalendarView (Calendar with decade, year and month view)
+- AdaptiveTriggers (Change VisualState without code behind)
+- InkCanvas (Pen, mouse and touch strokes canvas)
+- KeyAccelerators (Shortcut defined in XAML)
+- LaunchFolderAsync (Open a folder in Winodws Explorer)
+- QueryUriSupportAsync (Check if an app is installed)
+- LaunchUriForResultsAsync (Launch an app and wait for some result)
+- AppService (Like micro webservice for modern apps)
+- MapControl (Graphical maps)
+- AdaptiveMediaStream (HLS & MPEG DASH video support)
+- RelativePanel (New layout control that define relation between controls)
+- SpeechSynthesizer (Text to speech)
+- Battery (Battery information)
+- MemoryManager (Memory information)
+- TitleBar (Title bar can match your theme)
 
 ##Requirements
 A machine with

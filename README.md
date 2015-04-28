@@ -8,12 +8,16 @@ So this project is more a playground than a reference. Use it as sandbox to quic
 
 ##What's in ?
 100% of the source code is available. It's full C# & XAML.
+
 You will find a Visual Studio solution (Win10Demo.sln) including 3 projects
 - The main app (Win10Demo.csproj)
 - The secondary app for the app to app communication scenarii (Win10Demo2.csproj)
 - The AppService project (Win10DemoService.csproj)
-Each feature is illustrated in a single file. Ex : 
+
+Each feature is illustrated in a single file. Ex : RelativePanelView.xaml for RelativePanel)
+
 There no external dependency or third party library.
+
 Here are the APIs/features used :
 - SplitView (Menu with hamburger)
 - CalendarView (Calendar with decade, year and month view)

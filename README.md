@@ -50,6 +50,8 @@ A machine with
 A: The code was written on Windows 10 build 10061 with Visual Studio 2015 CTP 6. It is still a work in progress project. Your feedback is very welcome. Create an issue or a pull request on Github :)
 #### Q: Are those example better that the official samples ?
 A: No, they are different. Microsoft is investing a lot of energy to create awesome samples.
+#### Q: Source code is great but do you have some videos ?
+A: Yes, they are videos in English http://channel9.msdn.com/Series/Developers-Guide-to-Windows-10-Preview and in French http://channel9.msdn.com/Blogs/Microsoft-D-veloppeurs-France/01-Plateforme-et-outils
 
 If you have any problem with the scripts, use GitHub or contact me on Twitter @danvy
 

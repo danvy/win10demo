@@ -8,14 +8,17 @@
     mc:Ignorable="d">
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<Pivot Title="Title">
+		<Pivot Title="Bienvenue dans MVA">
 			<Pivot.HeaderTemplate>
 				<DataTemplate>
-					<TextBlock Text="{Binding}" FontSize="36" Foreground="Red"/>
+					<TextBlock Text="{Binding}" FontSize="36" Foreground="Gray"/>
 				</DataTemplate>
 			</Pivot.HeaderTemplate>
-			<PivotItem Header="First">
-				<TextBlock Text="Wow" />
+			<PivotItem Header="Module 1">
+				<StackPanel>
+					<TextBlock Text="Wow" />
+					<TextBlock Text="Génial !" />
+				</StackPanel>
 			</PivotItem>
 			<PivotItem Header="Second">
 				<TextBlock Text="Fantastic" />

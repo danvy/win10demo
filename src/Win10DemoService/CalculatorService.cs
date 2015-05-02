@@ -20,7 +20,7 @@ namespace Win10DemoService
 			taskInstance.Canceled += TaskInstance_Canceled;
 			var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
 			connection = details.AppServiceConnection;
-			connection.RequestReceived += Connection_RequestReceived; ;
+			connection.RequestReceived += Connection_RequestReceived;
 		}
 
 		private async void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)

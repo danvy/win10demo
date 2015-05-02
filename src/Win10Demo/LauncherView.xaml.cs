@@ -11,6 +11,7 @@ using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -36,7 +37,7 @@ namespace Win10Demo
 		private async void LaunchFolder_Click(object sender, RoutedEventArgs e)
 		{
 			var options = new FolderLauncherOptions();
-			options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseHalf;
+			options.DesiredRemainingView = ViewSizePreference.UseHalf;
 			await Launcher.LaunchFolderAsync(KnownFolders.PicturesLibrary, options);
 		}
 		private async void LaunchSettings_Click(object sender, RoutedEventArgs e)
@@ -48,8 +49,8 @@ namespace Win10Demo
 		{
 			var protocol = "win10demo2://";
 			var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
-			//var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
-			//if (status == QueryUriSupportStatus.Success)
+			var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchQuerySupportType.UriForResults, packageFamilyName);
+			if (status == LaunchQuerySupportStatus.Available)
 			{
 				var options = new LauncherOptions
 				{

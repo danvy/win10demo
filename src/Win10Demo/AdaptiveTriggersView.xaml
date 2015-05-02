@@ -17,10 +17,6 @@
 					<VisualState.Setters>
 						<Setter Target="Pivot1.Background" Value="Green" />
 						<Setter Target="Panel1.Orientation" Value="Horizontal" />
-						<Setter Target="BlueRect4.(RelativePanel.LeftOf)" Value="WhiteRect4" />
-						<Setter Target="BlueRect4.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True" />
-						<Setter Target="RedRect4.(RelativePanel.RightOf)" Value="WhiteRect4" />
-						<Setter Target="RedRect4.(RelativePanel.AlignVerticalCenterWithPanel)" Value="True" />
 					</VisualState.Setters>
 				</VisualState>
 				<VisualState x:Name="NarrowState">
@@ -30,10 +26,6 @@
 					<VisualState.Setters>
 						<Setter Target="Pivot1.Background" Value="Orange" />
 						<Setter Target="Panel1.Orientation" Value="Vertical" />
-						<Setter Target="BlueRect4.(RelativePanel.Above)" Value="WhiteRect4" />
-						<Setter Target="BlueRect4.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True" />
-						<Setter Target="RedRect4.(RelativePanel.Below)" Value="WhiteRect4" />
-						<Setter Target="RedRect4.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True" />
 					</VisualState.Setters>
 				</VisualState>
 			</VisualStateGroup>

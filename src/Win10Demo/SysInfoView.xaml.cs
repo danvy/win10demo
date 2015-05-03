@@ -8,6 +8,7 @@ using Windows.Devices.Power;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
+using Windows.System.Power;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -54,7 +55,7 @@ namespace Win10Demo
 			BatteryLevelText.Text = string.Format("FullChargeCapacityInMilliwattHours={0}", report.FullChargeCapacityInMilliwattHours);
 			BatteryLevelText.Text = string.Format("RemainingCapacityInMilliwattHours={0}", report.RemainingCapacityInMilliwattHours);
 			int? level = 0;
-			if (report.Status != Windows.System.BatteryStatus.NotPresent)
+			if (report.Status != BatteryStatus.NotPresent)
 			{
 				level = 100 * report.RemainingCapacityInMilliwattHours / report.FullChargeCapacityInMilliwattHours;
 			}

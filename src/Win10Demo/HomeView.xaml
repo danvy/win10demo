@@ -13,9 +13,9 @@
 			<RowDefinition Height="*" />
 			<RowDefinition Height="auto" />
 		</Grid.RowDefinitions>
-		<TextBlock Text="Welcome to the Windows 10 SDK Demo community project" FontSize="32" Foreground="White" />
+		<TextBlock Text="Welcome to the Windows 10 SDK Demo community project" FontSize="32" Foreground="White" Margin="12"/>
 		<Image Grid.Row="1" Source="Assets/SplashScreen.scale-100.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None"/>
-		<StackPanel Grid.Row="2" >
+		<StackPanel Grid.Row="2" Margin="12">
 			<TextBlock Text="The full source code is available on" FontSize="24" Foreground="White"/>
 			<HyperlinkButton Content="http://github.com/danvy/win10demo" FontSize="24" Foreground="White"/>
 			<TextBlock Text="under Apache 2.0 licence" FontSize="24" Foreground="White"/>

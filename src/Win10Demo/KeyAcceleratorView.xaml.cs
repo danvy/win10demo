@@ -27,17 +27,17 @@ namespace Win10Demo
 			this.InitializeComponent();
 		}
 
-		private void KeyT_Pressed(KeyAccelerator sender, object args)
-		{
-			KeyPressedText.Text = "'T' key pressed";
-		}
-		private void KeyCtrlT_Pressed(KeyAccelerator sender, object args)
-		{
-			KeyPressedText.Text = "'T' key pressed with 'Control'";
-		}
-		private void KeyMenuT_Pressed(KeyAccelerator sender, object args)
-		{
-			KeyPressedText.Text = "'T' key pressed with 'Menu'";
-		}
+		//private void KeyT_Pressed(KeyAccelerator sender, object args)
+		//{
+		//	KeyPressedText.Text = "'T' key pressed";
+		//}
+		//private void KeyCtrlT_Pressed(KeyAccelerator sender, object args)
+		//{
+		//	KeyPressedText.Text = "'T' key pressed with 'Control'";
+		//}
+		//private void KeyMenuT_Pressed(KeyAccelerator sender, object args)
+		//{
+		//	KeyPressedText.Text = "'T' key pressed with 'Menu'";
+		//}
 	}
 }

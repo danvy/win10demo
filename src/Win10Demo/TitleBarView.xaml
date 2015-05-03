@@ -11,7 +11,7 @@
 		<StackPanel>
 			<Button x:Name="BlueTitleBarButton" Content="Blue title" Click="BlueTitleBarButton_Click" />
 			<Button x:Name="RedTitleBarButton" Content="Red title" Click="RedTitleBarButton_Click" />
-			<Button x:Name="GreenTitleBarButton" Content="Green title extended" Click="GreenTitleBarButton_Click" />
+			<Button x:Name="GreenTitleBarButton" Content="Green title" Click="GreenTitleBarButton_Click" />
 		</StackPanel>
     </Grid>
 </Page>

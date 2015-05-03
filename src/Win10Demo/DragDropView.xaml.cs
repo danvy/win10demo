@@ -43,8 +43,6 @@ namespace Win10Demo
 		private void AvailableListBox_DragStarting(UIElement sender, DragStartingEventArgs args)
 		{
 			Debug.WriteLine("DragStarting");
-			args.DragVisualKind = DragVisualKind.DataFormat;
-
 			//if (item == null)
 			//	return;
 			//args.Data.Properties.Add("item", item);

@@ -28,11 +28,10 @@ namespace Win10Demo
 		{
 			this.InitializeComponent();
 		}
-		public void UpdateTitle(string title, Color backgroundColor, Color foregroundColor, Color buttonBackgroundColor, Color buttonForegroundColor, bool extended = false)
+		public void UpdateTitle(string title, Color backgroundColor, Color foregroundColor, Color buttonBackgroundColor, Color buttonForegroundColor)
 		{
 			var appView = ApplicationView.GetForCurrentView();
 			appView.Title = title;
-			appView.TitleBar.ExtendViewIntoTitleBar = extended;
 			appView.TitleBar.BackgroundColor = backgroundColor;
 			appView.TitleBar.ForegroundColor = foregroundColor;
 			appView.TitleBar.ButtonBackgroundColor = buttonBackgroundColor;
@@ -51,7 +50,7 @@ namespace Win10Demo
 
 		private void GreenTitleBarButton_Click(object sender, RoutedEventArgs e)
 		{
-			UpdateTitle("Green attitude", Colors.DarkRed, Colors.White, Colors.Red, Colors.White, true);
+			UpdateTitle("Green attitude", Colors.DarkRed, Colors.White, Colors.Red, Colors.White);
 		}
 	}
 }

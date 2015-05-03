@@ -11,6 +11,7 @@ using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,8 +29,6 @@ namespace Win10Demo
 	/// </summary>
 	public sealed partial class LauncherView : Page
 	{
-		private string packageFamilyName = "0df93276-6bb-46fa-96b7-ec223e226505_k78v8hwpzrpgy";
-		//private string packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
 		public LauncherView()
 		{
 			this.InitializeComponent();
@@ -38,18 +37,20 @@ namespace Win10Demo
 		private async void LaunchFolder_Click(object sender, RoutedEventArgs e)
 		{
 			var options = new FolderLauncherOptions();
-			options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseHalf;
+			options.DesiredRemainingView = ViewSizePreference.UseHalf;
 			await Launcher.LaunchFolderAsync(KnownFolders.PicturesLibrary, options);
 		}
 		private async void LaunchSettings_Click(object sender, RoutedEventArgs e)
 		{
+			//More options available https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn741261.aspx
 			await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));
 		}
 		private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)
 		{
 			var protocol = "win10demo2://";
-			var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
-			if (status == QueryUriSupportStatus.Success)
+			var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
+			var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchQuerySupportType.UriForResults, packageFamilyName);
+			if (status == LaunchQuerySupportStatus.Available)
 			{
 				var options = new LauncherOptions
 				{
@@ -58,7 +59,6 @@ namespace Win10Demo
 				var values = new ValueSet();
 				values.Add("TwitterId", "danvy");
 				var result = await Launcher.LaunchUriForResultsAsync(new Uri(protocol), options, values);
-				Debug.WriteLine(result.Status);
 				if (result.Status == LaunchUriStatus.Success)
 				{
 					var authorized = result.Result["Authorized"] as string;
@@ -73,7 +73,7 @@ namespace Win10Demo
 		private async void CallService_Click(object sender, RoutedEventArgs e)
 		{
 			var connection = new AppServiceConnection();
-			connection.PackageFamilyName = packageFamilyName;
+			connection.PackageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06"; // Windows.ApplicationModel.Package.Current.Id.FamilyName;
 			connection.AppServiceName = "CalculatorService";
 			var status = await connection.OpenAsync();
 			if (status != AppServiceConnectionStatus.Success)

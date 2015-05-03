@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -71,10 +72,17 @@ namespace Win10Demo2
 		private async Task<string> ReadSharedFileAsync(string filename)
 		{
 			var folder = ApplicationData.Current.GetPublisherCacheFolder("SharedFolder");
-			using (var stream = await folder.OpenStreamForReadAsync(filename))
+			try
 			{
-				using (var streamReader = new StreamReader(stream))
-					return streamReader.ReadToEnd();
+				using (var stream = await folder.OpenStreamForReadAsync(filename))
+				{
+					using (var streamReader = new StreamReader(stream))
+						return streamReader.ReadToEnd();
+				}
+			}
+			catch
+			{
+				return "";
 			}
 		}
 	}

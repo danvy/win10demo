@@ -13,6 +13,7 @@
         PaneBackground="#343434" 
         Content="{Binding}">
 			<SplitView.Pane>
+				<ScrollViewer>
 				<StackPanel>
 					<RadioButton x:Name="BackButton" Background="Green" Tag="" Click="BackButton_Click" Style="{StaticResource MenuRadioButtonStyle}" Content="Back"/>
 					<RadioButton x:Name="MenuButton" Style="{StaticResource MenuRadioButtonStyle}" Content="Menu" Tag="" Click="MenuButton_Click" />
@@ -33,6 +34,7 @@
 					<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="System informations" x:Name="SysInfoButton" Click="SysInfoButton_Click" />
 					<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="Test" x:Name="TestButton" Click="TestButton_Click" />
 				</StackPanel>
+					</ScrollViewer>
 			</SplitView.Pane>
 		</SplitView>
 	</Grid>

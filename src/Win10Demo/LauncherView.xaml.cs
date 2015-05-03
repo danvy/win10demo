@@ -28,6 +28,8 @@ namespace Win10Demo
 	/// </summary>
 	public sealed partial class LauncherView : Page
 	{
+		private string packageFamilyName = "0df93276-6bb-46fa-96b7-ec223e226505_k78v8hwpzrpgy";
+		//private string packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
 		public LauncherView()
 		{
 			this.InitializeComponent();
@@ -46,9 +48,8 @@ namespace Win10Demo
 		private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)
 		{
 			var protocol = "win10demo2://";
-			var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
-			//var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
-			//if (status == QueryUriSupportStatus.Success)
+			var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchUriType.LaunchUri, packageFamilyName);
+			if (status == QueryUriSupportStatus.Success)
 			{
 				var options = new LauncherOptions
 				{
@@ -57,6 +58,7 @@ namespace Win10Demo
 				var values = new ValueSet();
 				values.Add("TwitterId", "danvy");
 				var result = await Launcher.LaunchUriForResultsAsync(new Uri(protocol), options, values);
+				Debug.WriteLine(result.Status);
 				if (result.Status == LaunchUriStatus.Success)
 				{
 					var authorized = result.Result["Authorized"] as string;
@@ -71,7 +73,7 @@ namespace Win10Demo
 		private async void CallService_Click(object sender, RoutedEventArgs e)
 		{
 			var connection = new AppServiceConnection();
-			connection.PackageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06"; // Windows.ApplicationModel.Package.Current.Id.FamilyName;
+			connection.PackageFamilyName = packageFamilyName;
 			connection.AppServiceName = "CalculatorService";
 			var status = await connection.OpenAsync();
 			if (status != AppServiceConnectionStatus.Success)

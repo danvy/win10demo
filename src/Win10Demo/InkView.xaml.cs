@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -58,10 +59,15 @@ namespace Win10Demo
 			}
 			inkManager.DeleteSelected();
 		}
-		private void RecognizeButton_Click(object sender, RoutedEventArgs e)
+		private async void RecognizeButton_Click(object sender, RoutedEventArgs e)
 		{
+			return;
+			var recognizers = inkManager.GetRecognizers();
+			if (recognizers.Count == 0)
+				return;
+			inkManager.SetDefaultRecognizer(recognizers[0]);
 			var sb = new StringBuilder();
-			var results = inkManager.GetRecognitionResults();
+			var results = await inkManager.RecognizeAsync(InkRecognitionTarget.All);
 			foreach (var result in results)
 			{
 				sb.AppendLine(result.GetTextCandidates().FirstOrDefault());

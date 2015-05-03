@@ -111,15 +111,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <SDKReference Include="Windows Desktop, Version=10.0.10030.0">
-      <Name>Windows Desktop Extension SDK</Name>
-    </SDKReference>
-    <SDKReference Include="WindowsMobile, Version=10.0.0.1">
-      <Name>Microsoft Mobile Extension SDK for Universal App Platform</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="AdaptiveTriggersView.xaml.cs">
       <DependentUpon>AdaptiveTriggersView.xaml</DependentUpon>
     </Compile>
@@ -271,6 +262,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.10069.0">
+      <Name>Microsoft Desktop Extension SDK for Universal App Platform</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.0.1">
+      <Name>Microsoft Mobile Extension SDK for Universal App Platform</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

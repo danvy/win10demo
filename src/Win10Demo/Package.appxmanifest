@@ -6,52 +6,51 @@
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   IgnorableNamespaces="uap mp">
 
-	<Identity
+  <Identity
 	  Name="bfaefacc-013a-4a1c-9036-1ccdaba70ca7"
 	  Publisher="CN=Alex Danvy"
 	  Version="1.0.0.0" />
 
-	<mp:PhoneIdentity PhoneProductId="bfaefacc-013a-4a1c-9036-1ccdaba70ca7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="bfaefacc-013a-4a1c-9036-1ccdaba70ca7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
-	<Properties>
-		<DisplayName>Windows 10 SDK Demo</DisplayName>
-		<PublisherDisplayName>Alex Danvy</PublisherDisplayName>
-		<Logo>Assets\StoreLogo.png</Logo>
-	</Properties>
+  <Properties>
+    <DisplayName>Windows 10 SDK Demo</DisplayName>
+    <PublisherDisplayName>Alex Danvy</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
 
-	<Dependencies>
-		<TargetPlatform Name="Windows.Universal" MinVersion="10.0.10030.0" MaxVersionTested="10.0.10030.0" />
-	</Dependencies>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
+  </Dependencies>
 
-	<Resources>
-		<Resource Language="x-generate"/>
-	</Resources>
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
 
-	<Applications>
-		<Application Id="App"
+  <Applications>
+    <Application Id="App"
 		  Executable="$targetnametoken$.exe"
 		  EntryPoint="Win10Demo.App">
-			<uap:VisualElements
+      <uap:VisualElements
 			  DisplayName="Win10Demo"
 			  Square150x150Logo="Assets\Logo.png"
 			  Square44x44Logo="Assets\SmallLogo.png"
 			  Description="Win10Demo"
-			  ForegroundText="light"
-			  BackgroundColor="#00B2F0">
-				<uap:SplashScreen Image="Assets\SplashScreen.png" />
-			</uap:VisualElements>
-		</Application>
-	</Applications>
-	<Extensions>
-		<Extension Category="windows.publisherCacheFolders">
-			<PublisherCacheFolders>
-				<Folder Name="SharedFolder" />
-			</PublisherCacheFolders>
-		</Extension>
-	</Extensions>
-	<Capabilities>
-		<Capability Name="internetClient" />
-		<uap:Capability Name="picturesLibrary" />
-		<DeviceCapability Name="location"/>
-	</Capabilities>
+        BackgroundColor="#00B2F0">
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Extensions>
+    <Extension Category="windows.publisherCacheFolders">
+      <PublisherCacheFolders>
+        <Folder Name="SharedFolder" />
+      </PublisherCacheFolders>
+    </Extension>
+  </Extensions>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="picturesLibrary" />
+    <DeviceCapability Name="location"/>
+  </Capabilities>
 </Package>

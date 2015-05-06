@@ -10,49 +10,42 @@ namespace Win10DemoRPI
     public sealed partial class MainPage : Page
     {
         private DispatcherTimer timer;
-        private GpioPin pin1 = null;
-        private GpioPin pin2 = null;
+        private GpioPin pin13 = null;
+        private bool ledOn = true;
         public MainPage()
         {
             this.InitializeComponent();
             Loaded += MainPage_Loaded;
+            Unloaded += MainPage_Unloaded;
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(500);
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
         }
+
+        private void MainPage_Unloaded(object sender, RoutedEventArgs e)
+        {
+            pin13.Dispose();
+        }
+
         private void Timer_Tick(object sender, object e)
         {
-            if (pin2 != null)
+            if (pin13 != null)
             {
-                pin2.Read();
-            }            
+                pin13.Write(ledOn ? GpioPinValue.High : GpioPinValue.Low);
+                ledOn = !ledOn;
+            }
         }
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             timer.Start();
             HeartBeatStoryboard.Begin();
-            if (ApiInformation.IsApiContractPresent("Windows.Devices.DevicesLowLevelContract", 0))
+            //if (ApiInformation.IsApiContractPresent("Windows.Devices.DevicesLowLevelContract", 0))
+            if (ApiInformation.IsTypePresent("Windows.Devices.Gpio.GpioController"))
             {
                 var gpio = GpioController.GetDefault();
-                GpioOpenStatus status = default(GpioOpenStatus);
-                if (gpio.TryOpenPin(1, GpioSharingMode.SharedReadOnly, out pin1, out status))
-                {
-                    if (status == GpioOpenStatus.PinOpened)
-                    {
-                        pin1.ValueChanged += Pin1_ValueChanged;
-                    }
-                }
-                if (gpio.TryOpenPin(2, GpioSharingMode.SharedReadOnly, out pin2, out status))
-                {
-                    if (status == GpioOpenStatus.PinOpened)
-                    {
-                    }
-                }
+                pin13 = gpio.OpenPin(27);
+                pin13.SetDriveMode(GpioPinDriveMode.Output);
             }
-        }
-        private void Pin1_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
-        {
-            Debug.WriteLine("Pin1");
         }
     }
 }

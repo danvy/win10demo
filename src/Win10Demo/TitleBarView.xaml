@@ -12,6 +12,7 @@
 			<Button x:Name="BlueTitleBarButton" Content="Blue title" Click="BlueTitleBarButton_Click" />
 			<Button x:Name="RedTitleBarButton" Content="Red title" Click="RedTitleBarButton_Click" />
 			<Button x:Name="GreenTitleBarButton" Content="Green title" Click="GreenTitleBarButton_Click" />
+            <Button x:Name="CustomTitleBarButton" Content="Custom title" Click="CustomTitleBarButton_Click" Visibility="Collapsed"/>
 		</StackPanel>
     </Grid>
 </Page>

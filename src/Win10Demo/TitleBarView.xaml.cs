@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -28,7 +29,7 @@ namespace Win10Demo
 		{
 			this.InitializeComponent();
 		}
-		public void UpdateTitle(string title, Color backgroundColor, Color foregroundColor, Color buttonBackgroundColor, Color buttonForegroundColor)
+        public void UpdateTitle(string title, Color backgroundColor, Color foregroundColor, Color buttonBackgroundColor, Color buttonForegroundColor, bool extended = false)
 		{
 			var appView = ApplicationView.GetForCurrentView();
 			appView.Title = title;
@@ -36,9 +37,10 @@ namespace Win10Demo
 			appView.TitleBar.ForegroundColor = foregroundColor;
 			appView.TitleBar.ButtonBackgroundColor = buttonBackgroundColor;
 			appView.TitleBar.ButtonForegroundColor = buttonForegroundColor;
-		}
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = extended;
+        }
 
-		private void BlueTitleBarButton_Click(object sender, RoutedEventArgs e)
+        private void BlueTitleBarButton_Click(object sender, RoutedEventArgs e)
 		{
 			UpdateTitle("Life in blue", Colors.DarkBlue, Colors.White, Colors.Blue, Colors.White);
 		}
@@ -50,7 +52,22 @@ namespace Win10Demo
 
 		private void GreenTitleBarButton_Click(object sender, RoutedEventArgs e)
 		{
-			UpdateTitle("Green attitude", Colors.DarkRed, Colors.White, Colors.Red, Colors.White);
+			UpdateTitle("Green attitude extended", Colors.DarkGreen, Colors.White, Colors.Green, Colors.White, true);
 		}
-	}
+        private void CustomTitleBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            //var bar = new Grid();
+            //bar.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            //bar.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+            //bar.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+            //bar.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+            ////var min = new Button() { Content = "-" };
+            ////min.Click += Min_Click;
+            //var title = new TextBlock() { Text = "Custom" };
+            //bar.Children.Add(title);
+            //Grid.SetColumn(title, 0);
+            //Window.Current.SetTitleBar(bar);
+            Window.Current.SetTitleBar(CustomBlock);
+        }
+    }
 }

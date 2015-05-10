@@ -15,7 +15,7 @@ You will find a Visual Studio solution (Win10Demo.sln) including 3 projects
 - AppService project (Win10DemoService.csproj)
 - Universal Windows App running on Windows Phone, Windows & Windows IoT (Raspberry PI 2) (Win10DemoRPI.csproj)
 
-![Screen shot](https://github.com/danvy/Win10Demo/blob/master/img/Win10RPI2Surface.JPG)
+![Screen shot](https://github.com/danvy/win10demo/blob/master/img/Win10RPI2Surface.jpg)
 
 Photo credit Jean-Sebastien Dupuy, Maker Faire Paris 2015
 

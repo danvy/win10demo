@@ -10,12 +10,14 @@ So this project is more a playground than a reference. Use it as sandbox to quic
 100% of the source code is available. It's full C# & XAML.
 
 You will find a Visual Studio solution (Win10Demo.sln) including 3 projects
-- Main app (Win10Demo.csproj)
+- Main app. Each feature is illustrated in a single file. Ex : RelativePanelView.xaml for RelativePanel) (Win10Demo.csproj)
 - Secondary app for the app to app communication scenarii (Win10Demo2.csproj)
 - AppService project (Win10DemoService.csproj)
 - Universal Windows App running on Windows Phone, Windows & Windows IoT (Raspberry PI 2) (Win10DemoRPI.csproj)
 
-Each feature is illustrated in a single file. Ex : RelativePanelView.xaml for RelativePanel)
+![Screen shot](https://github.com/danvy/Win10Demo/blob/master/img/Win10RPI2Surface.JPG)
+
+Photo credit Jean-Sebastien Dupuy, Maker Faire Paris 2015
 
 There no external dependency or third party library.
 

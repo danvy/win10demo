@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Win10Demo.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -51,10 +52,10 @@ namespace Win10Demo
             }
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
-			MainPage shell = Window.Current.Content as MainPage;
+			var shell = Window.Current.Content as ShellView;
 			if (shell == null)
 			{
-				shell = new MainPage();
+				shell = new ShellView();
 				if (rootFrame == null)
 				{
 					rootFrame = new Frame();
@@ -69,7 +70,7 @@ namespace Win10Demo
 			}
             if (rootFrame.Content == null)
             {
-                rootFrame.Navigate(typeof(HomeView), e.Arguments);
+                rootFrame.Navigate(typeof(HomeView), e.Arguments, new Windows.UI.Xaml.Media.Animation.SuppressNavigationTransitionInfo());
             }
             Window.Current.Activate();
         }

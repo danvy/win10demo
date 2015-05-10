@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="Win10Demo.Views.MediaSourceView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="HLS video" Click="VideoButton1_Click"/>
+				<Button Content="MPEG DASH"  Click="VideoButton2_Click"/>
+				<Button Content="video 3"  Click="VideoButton3_Click"/>
+			</StackPanel>
+			<MediaElement x:Name="Media" />
+			<TextBlock x:Name="CurrentStateText" />
+			<TextBlock x:Name="BufferingProgressText" />
+		</StackPanel>
+	</Grid>
+</Page>

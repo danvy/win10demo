@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="Win10Demo.Views.KeyAcceleratorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" >
+	<!--<Page.KeyAccelerators>
+		<KeyAccelerator Key="T" KeyModifiers="None" Pressed="KeyT_Pressed" />
+		<KeyAccelerator Key="T" KeyModifiers="Control" Pressed="KeyCtrlT_Pressed" />
+		<KeyAccelerator Key="T" KeyModifiers="Menu" Pressed="KeyMenuT_Pressed" />
+	</Page.KeyAccelerators>-->
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<StackPanel>
+			<TextBlock Text="Press the 'T' key with 'Control' or 'Menu' or nothing" />
+			<TextBlock x:Name="KeyPressedText" />
+		</StackPanel>
+	</Grid>
+</Page>

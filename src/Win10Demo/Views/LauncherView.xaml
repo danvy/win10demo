@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Win10Demo.Views.LauncherView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<StackPanel>
+			<Button Content="Launch pictures folder" Click="LaunchFolder_Click" />
+			<Button Content="Launch Wifi settings" Click="LaunchSettings_Click" />
+			<Button Content="Launch URI for Result" Click="LaunchUriForResult_Click" />
+			<TextBox x:Name="SharedFileBox" Text="Would you please share this content?" />
+			<Button Content="Write shared file" Click="WriteSharedsFileButton_Click" />
+			<StackPanel Orientation="Horizontal">
+				<TextBox x:Name="ValueABox" InputScope="Number" Text="1" />
+				<ComboBox x:Name="OperatorCombo" SelectedIndex="0">
+					<ComboBoxItem Content="Add" />
+					<ComboBoxItem Content="Sub" />
+				</ComboBox>
+				<TextBox x:Name="ValueBBox" InputScope="Number" Text="2" />
+				<TextBlock Text="=" />
+				<TextBlock x:Name="ResultBlock" Text="?" />
+			</StackPanel>
+			<Button Content="Call service" Click="CallService_Click" />
+		</StackPanel>
+	</Grid>
+</Page>

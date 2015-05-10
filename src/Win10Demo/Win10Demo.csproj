@@ -111,62 +111,62 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AdaptiveTriggersView.xaml.cs">
+    <Compile Include="Views\AdaptiveTriggersView.xaml.cs">
       <DependentUpon>AdaptiveTriggersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CalendarViewView.xaml.cs">
+    <Compile Include="Views\CalendarViewView.xaml.cs">
       <DependentUpon>CalendarViewView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DragDropView.xaml.cs">
+    <Compile Include="Views\DragDropView.xaml.cs">
       <DependentUpon>DragDropView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HomeView.xaml.cs">
+    <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InkView.xaml.cs">
+    <Compile Include="Views\InkView.xaml.cs">
       <DependentUpon>InkView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KeyAcceleratorView.xaml.cs">
+    <Compile Include="Views\KeyAcceleratorView.xaml.cs">
       <DependentUpon>KeyAcceleratorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LauncherView.xaml.cs">
+    <Compile Include="Views\LauncherView.xaml.cs">
       <DependentUpon>LauncherView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MapsView.xaml.cs">
+    <Compile Include="Views\MapsView.xaml.cs">
       <DependentUpon>MapsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MediaSourceView.xaml.cs">
+    <Compile Include="Views\MediaSourceView.xaml.cs">
       <DependentUpon>MediaSourceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PivotView.xaml.cs">
+    <Compile Include="Views\PivotView.xaml.cs">
       <DependentUpon>PivotView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RelativePanelView.xaml.cs">
+    <Compile Include="Views\RelativePanelView.xaml.cs">
       <DependentUpon>RelativePanelView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SpeechView.xaml.cs">
+    <Compile Include="Views\SpeechView.xaml.cs">
       <DependentUpon>SpeechView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SplitViewView.xaml.cs">
+    <Compile Include="Views\SplitViewView.xaml.cs">
       <DependentUpon>SplitViewView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SysInfoView.xaml.cs">
+    <Compile Include="Views\SysInfoView.xaml.cs">
       <DependentUpon>SysInfoView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestView.xaml.cs">
+    <Compile Include="Views\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TitleBarView.xaml.cs">
+    <Compile Include="Views\TitleBarView.xaml.cs">
       <DependentUpon>TitleBarView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ValidationView.xaml.cs">
+    <Compile Include="Views\ValidationView.xaml.cs">
       <DependentUpon>ValidationView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -190,75 +190,75 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AdaptiveTriggersView.xaml">
+    <Page Include="Views\AdaptiveTriggersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CalendarViewView.xaml">
+    <Page Include="Views\CalendarViewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DragDropView.xaml">
+    <Page Include="Views\DragDropView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HomeView.xaml">
+    <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InkView.xaml">
+    <Page Include="Views\InkView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KeyAcceleratorView.xaml">
+    <Page Include="Views\KeyAcceleratorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LauncherView.xaml">
+    <Page Include="Views\LauncherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MapsView.xaml">
+    <Page Include="Views\MapsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MediaSourceView.xaml">
+    <Page Include="Views\MediaSourceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PivotView.xaml">
+    <Page Include="Views\PivotView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RelativePanelView.xaml">
+    <Page Include="Views\RelativePanelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SpeechView.xaml">
+    <Page Include="Views\SpeechView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SplitViewView.xaml">
+    <Page Include="Views\SplitViewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SysInfoView.xaml">
+    <Page Include="Views\SysInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestView.xaml">
+    <Page Include="Views\TestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TitleBarView.xaml">
+    <Page Include="Views\TitleBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ValidationView.xaml">
+    <Page Include="Views\ValidationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

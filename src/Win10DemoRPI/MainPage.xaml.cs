@@ -35,8 +35,10 @@ namespace Win10DemoRPI
                 ledOn = !ledOn;
             }
         }
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+            await statusBar.HideAsync();
             timer.Start();
             HeartBeatStoryboard.Begin();
             //if (ApiInformation.IsApiContractPresent("Windows.Devices.DevicesLowLevelContract", 0))

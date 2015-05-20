@@ -18,7 +18,7 @@
 						<RadioButton x:Name="BackButton" Background="Green" Tag="" Click="BackButton_Click" Style="{StaticResource MenuRadioButtonStyle}" Content="Back"/>
 						<RadioButton x:Name="MenuButton" Style="{StaticResource MenuRadioButtonStyle}" Content="Menu" Tag="" Click="MenuButton_Click" />
 						<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="Home" x:Name="HomeButton" Click="HomeButton_Click" />
-						<!--<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="Drag and drop" x:Name="DrapDropButton" Click="DrapDropButton_Click" />-->
+						<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="Drag and drop" x:Name="DrapDropButton" Click="DrapDropButton_Click" />
 						<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="Pivot" x:Name="PivotButton" Click="PivotButton_Click" />
 						<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="CalendarView" x:Name="CalendarViewButton" Click="CalendarViewButton_Click" />
 						<RadioButton GroupName="Menu" Tag="" Style="{StaticResource MenuRadioButtonStyle}" Content="MapControl" x:Name="MapControlButton" Click="MapControlButton_Click" />

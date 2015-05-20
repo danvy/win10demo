@@ -59,20 +59,19 @@ namespace Win10Demo.Views
 			}
 			inkManager.DeleteSelected();
 		}
-		private async void RecognizeButton_Click(object sender, RoutedEventArgs e)
+		private void RecognizeButton_Click(object sender, RoutedEventArgs e)
 		{
-			return;
-			var recognizers = inkManager.GetRecognizers();
-			if (recognizers.Count == 0)
-				return;
-			inkManager.SetDefaultRecognizer(recognizers[0]);
-			var sb = new StringBuilder();
-			var results = await inkManager.RecognizeAsync(InkRecognitionTarget.All);
-			foreach (var result in results)
-			{
-				sb.AppendLine(result.GetTextCandidates().FirstOrDefault());
-			}
-			RecognitionText.Text = sb.ToString();
+			//var recognizers = inkManager.GetRecognizers();
+			//if (recognizers.Count == 0)
+			//	return;
+			//inkManager.SetDefaultRecognizer(recognizers[0]);
+			//var sb = new StringBuilder();
+			//var results = await inkManager.RecognizeAsync(InkRecognitionTarget.All);
+			//foreach (var result in results)
+			//{
+			//	sb.AppendLine(result.GetTextCandidates().FirstOrDefault());
+			//}
+			//RecognitionText.Text = sb.ToString();
 		}
 	}
 }

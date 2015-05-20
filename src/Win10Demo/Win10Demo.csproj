@@ -111,6 +111,7 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Tools\DeviceFamilyAdaptiveTrigger.cs" />
     <Compile Include="Views\AdaptiveTriggersView.xaml.cs">
       <DependentUpon>AdaptiveTriggersView.xaml</DependentUpon>
     </Compile>

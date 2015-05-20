@@ -38,15 +38,24 @@ Here are the APIs/features used :
 - Battery (Battery information)
 - MemoryManager (Memory information)
 - TitleBar (Title bar can match your theme)
+- Drap and Drop
 
 ##Requirements
 A machine with
-- Windows 10 Technical Preview Build >=10041
-- Visual Studio 2015 CTP 6
+- Windows 10 Technical Preview Build >=10074
+- Visual Studio 2015 RC
 - Windows 10 Technical Preview Tools
 
 ##What's new?
-04/22/2015 Initial release
+05/10/2015
+
+Updated for Windows 10 10074 & Visual Studio 2015 RC
+Added a Windows IoT on Raspberry Pi sample
+Added drap and drop sample
+
+04/22/2015
+
+Initial release
 
 ##Q&A
 #### Q: Hum, a sample doesn't work on my machine :S

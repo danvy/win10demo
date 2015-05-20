@@ -6,17 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<StackPanel Orientation="Horizontal">
-			<ListView x:Name="AvailableListBox" CanDrag="True" AllowDrop="True" CanDragItems="True" DragStarting="AvailableListBox_DragStarting" DragEnter="AvailableListBox_DragEnter" DragLeave="AvailableListBox_DragLeave" DragOver="AvailableListBox_DragOver" Drop="AvailableListBox_Drop" DropCompleted="AvailableListBox_DropCompleted">
-				<ListViewItem Content="One" />
-				<ListViewItem Content="Two" />
-				<ListViewItem Content="Three" />
-			</ListView>
-			<ListView x:Name="SelectedListBox" CanDrag="True" AllowDrop="True" CanDragItems="True" DragStarting="AvailableListBox_DragStarting" DragEnter="AvailableListBox_DragEnter" DragLeave="AvailableListBox_DragLeave" DragOver="AvailableListBox_DragOver" Drop="AvailableListBox_Drop" DropCompleted="AvailableListBox_DropCompleted">
-				<ListViewItem Content="Four" />
-			</ListView>
-		</StackPanel>
-	</Grid>
+    <Grid x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <StackPanel >
+            <TextBlock Text="Drap and drop a file from the Windows Explorer to the blue area" />
+            <Grid x:Name="DropGrid" Width="200" Height="200" Background="Blue" AllowDrop="True" Drop="DropGrid_Drop" DragOver="DropGrid_DragOver" DragEnter="DropGrid_DragEnter" DragLeave="DropGrid_DragLeave" DropCompleted="DropGrid_DropCompleted"/>
+            <TextBlock x:Name="StatusBlock" />
+            <TextBlock Text="Filename" />
+            <TextBlock x:Name="DroppedBlock" />
+            <TextBlock Text="Image" />
+            <Image x:Name="DroppedImage" />
+        </StackPanel>
+    </Grid>
 </Page>

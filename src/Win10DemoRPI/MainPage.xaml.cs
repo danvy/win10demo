@@ -37,16 +37,21 @@ namespace Win10DemoRPI
         }
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-            await statusBar.HideAsync();
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                await statusBar.HideAsync();
+            }
             timer.Start();
             HeartBeatStoryboard.Begin();
-            //if (ApiInformation.IsApiContractPresent("Windows.Devices.DevicesLowLevelContract", 0))
             if (ApiInformation.IsTypePresent("Windows.Devices.Gpio.GpioController"))
             {
                 var gpio = GpioController.GetDefault();
-                pin13 = gpio.OpenPin(27);
-                pin13.SetDriveMode(GpioPinDriveMode.Output);
+                if (gpio != null)
+                {
+                    pin13 = gpio.OpenPin(27);
+                    pin13.SetDriveMode(GpioPinDriveMode.Output);
+                }
             }
         }
     }

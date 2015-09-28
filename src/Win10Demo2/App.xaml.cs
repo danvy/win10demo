@@ -112,7 +112,7 @@ namespace Win10Demo2
 			if (args.Kind == ActivationKind.ProtocolForResults)
 			{
 				var pfrArgs = (ProtocolForResultsActivatedEventArgs)args;
-				if (pfrArgs.CallerPackageFamilyName.Equals("bfaefacc-013a-4a1c-9036-1ccdaba70ca7_k78v8hwpzrpgy"))
+				if (pfrArgs.CallerPackageFamilyName.Equals("72bff102-45dd-4b18-828c-230182ed8a3a_ncrzdc1cmma1g"))
 				{
 					rootFrame.Navigate(typeof(MainPage), pfrArgs);
 				}

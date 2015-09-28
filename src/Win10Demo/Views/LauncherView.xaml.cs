@@ -48,7 +48,7 @@ namespace Win10Demo.Views
 		private async void LaunchUriForResult_Click(object sender, RoutedEventArgs e)
 		{
 			var protocol = "win10demo2://";
-			var packageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06";
+			var packageFamilyName = "041cdcf9-8ef3-40e4-85e2-8f3de5e06155_ncrzdc1cmma1g";
 			var status = await Launcher.QueryUriSupportAsync(new Uri(protocol), LaunchQuerySupportType.UriForResults, packageFamilyName);
 			if (status == LaunchQuerySupportStatus.Available)
 			{
@@ -59,7 +59,7 @@ namespace Win10Demo.Views
 				var values = new ValueSet();
 				values.Add("TwitterId", "danvy");
 				var result = await Launcher.LaunchUriForResultsAsync(new Uri(protocol), options, values);
-				if (result.Status == LaunchUriStatus.Success)
+				if ((result.Status == LaunchUriStatus.Success) && (result.Result != null))
 				{
 					var authorized = result.Result["Authorized"] as string;
 					if (authorized == true.ToString())
@@ -73,7 +73,7 @@ namespace Win10Demo.Views
 		private async void CallService_Click(object sender, RoutedEventArgs e)
 		{
 			var connection = new AppServiceConnection();
-			connection.PackageFamilyName = "0df93276-6bbb-46fa-96b7-ec223e226505_cb1hhkscw5m06"; // Windows.ApplicationModel.Package.Current.Id.FamilyName;
+			connection.PackageFamilyName = "041cdcf9-8ef3-40e4-85e2-8f3de5e06155_ncrzdc1cmma1g"; // Windows.ApplicationModel.Package.Current.Id.FamilyName;
 			connection.AppServiceName = "CalculatorService";
 			var status = await connection.OpenAsync();
 			if (status != AppServiceConnectionStatus.Success)
@@ -83,7 +83,7 @@ namespace Win10Demo.Views
 				return;
 			}
 			var message = new ValueSet();
-			message.Add("service", OperatorCombo.Items[OperatorCombo.SelectedIndex]);
+			message.Add("service", (OperatorCombo.SelectedValue as ComboBoxItem).Content);
 			message.Add("a", Convert.ToInt32(ValueABox.Text));
 			message.Add("b", Convert.ToInt32(ValueBBox.Text));
 			AppServiceResponse response = await connection.SendMessageAsync(message);
@@ -91,7 +91,7 @@ namespace Win10Demo.Views
 			{
 				if (response.Message.ContainsKey("result"))
 				{
-					ResultBlock.Text = response.Message["result"] as string;
+					ResultBlock.Text = response.Message["result"].ToString();
 				}
 			}
 			else

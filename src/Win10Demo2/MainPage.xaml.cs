@@ -50,13 +50,13 @@ namespace Win10Demo2
 			}
 		}
 
-		private void ReturnResult()
+		private void ReturnResult(bool cancel = false)
 		{
 			if (pfrArgs != null)
 			{
 				var values = new ValueSet();
 				values.Add("TimeStamp", DateTime.Now.ToString());
-				values.Add("Authorized", (IdBlock.Text == "danvy").ToString());
+				values.Add("Authorized", cancel ? "" : (IdBlock.Text == "danvy").ToString());
 				pfrArgs.ProtocolForResultsOperation.ReportCompleted(values);
 			}
 		}
@@ -67,7 +67,7 @@ namespace Win10Demo2
 
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
-			ReturnResult();
+			ReturnResult(true);
 		}
 		private async Task<string> ReadSharedFileAsync(string filename)
 		{

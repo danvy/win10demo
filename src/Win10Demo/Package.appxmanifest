@@ -1,43 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-<Package
-  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  IgnorableNamespaces="uap mp">
-
-  <Identity
-	  Name="bfaefacc-013a-4a1c-9036-1ccdaba70ca7"
-	  Publisher="CN=Alex Danvy"
-	  Version="1.0.0.0" />
-
-  <mp:PhoneIdentity PhoneProductId="bfaefacc-013a-4a1c-9036-1ccdaba70ca7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
-
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="72bff102-45dd-4b18-828c-230182ed8a3a" Publisher="CN=aldanvy" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="72bff102-45dd-4b18-828c-230182ed8a3a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Windows 10 SDK Demo</DisplayName>
-    <PublisherDisplayName>Alex Danvy</PublisherDisplayName>
+    <DisplayName>Win10Demo</DisplayName>
+    <PublisherDisplayName>aldanvy</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
   </Dependencies>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-		  Executable="$targetnametoken$.exe"
-		  EntryPoint="Win10Demo.App">
-      <uap:VisualElements
-			  DisplayName="Win10Demo"
-			  Square150x150Logo="Assets\Logo.png"
-			  Square44x44Logo="Assets\SmallLogo.png"
-			  Description="Win10Demo"
-        BackgroundColor="#00B2F0">
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Win10Demo.App">
+      <uap:VisualElements DisplayName="Win10Demo" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Win10Demo" BackgroundColor="#00B2F0">
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#00B2F0" />
       </uap:VisualElements>
     </Application>
   </Applications>
@@ -51,6 +30,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <uap:Capability Name="picturesLibrary" />
-    <DeviceCapability Name="location"/>
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

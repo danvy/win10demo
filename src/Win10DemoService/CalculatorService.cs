@@ -45,6 +45,10 @@ namespace Win10DemoService
 						result.Add("result", Sub((int)message["a"], (int)message["b"]));
 					}
 				}
+                else
+                {
+                    result.Add("result", 0);
+                }
 			}
 			await args.Request.SendResponseAsync(result);
 			reqDeferral.Complete();
